@@ -1,0 +1,15 @@
+{% extends 'RMactivitytracker/base.html' %}
+
+{% block content %}
+<h2>Log Time for Activity: {{ activity.name }}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<form action="{% url 'index' %}">
+    <button type="submit">Back to Homepage</button>
+</form>
+
+{% endblock %}
